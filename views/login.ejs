@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="/css/index.css">
 
 <%- include('partials/header') %>
+<title>logging </title>
 
 <div class="container mt-5">
   <h1>Login</h1>
@@ -11,7 +12,7 @@
         <div class="card-body">
 
           <!-- Makes POST request to /login route -->
-          <form action="/login" method="POST">
+          <form action="/users/login" method="POST">
             <div class="form-group">
               <label for="email">Email</label>
               <input type="email" class="form-control" name="username">
@@ -20,7 +21,8 @@
               <label for="password">Password</label>
               <input type="password" class="form-control" name="password">
             </div>
-          		<div class="submitbtn"> <button type="submit" class="btn btn-primary" >Submit</button> </div>
+            <div class="submitbtn"> <button type="submit" class="btn btn-primary">Login</button> </div>
+              <p class="lead mt-4">Don't Have An Account? <a href="/users/register">Register </a></p>
           </form>
 
         </div>

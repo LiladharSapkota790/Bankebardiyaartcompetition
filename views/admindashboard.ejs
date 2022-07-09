@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="/css/index.css">
+
+<div class="dashboard-heading">
+  <div class="heading">
+    <h2 class="common-heading-h2"> Dashboard </h2>
+  </div>
+
+
+  <h2> All users </h2>
+  <div class="logout">
+    <a href="/users/logout" class="btn btn-secondary logoutbtn btn-lg"> Log Out </a>
+  </div>
+</div>
+
+<div class="container-fluid-dashboard">
+  <% users.forEach(function(user) { %>
+  <div class="user display-block">
+  <div class="">
+    <p class="lead mb-3 myownheader">Welcome: "<%=user.username %>"</p>
+    <p>
+      Status: 
+    </p>
+  </div>
+  </div>
+  <hr>
+  <div class="dashboard-body">
+
+
+  </div>
+
+
+  <% }) %>
+</div>

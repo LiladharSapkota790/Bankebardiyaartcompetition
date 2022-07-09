@@ -1,0 +1,30 @@
+  <link rel="stylesheet" href="/css/index.css">
+
+  <div class="dashboard-heading">
+    <div class="heading">
+      <h2 class="common-heading-h2"> Dashboard </h2>
+    </div>
+
+
+    <h2> All users </h2>
+    <div class="logout">
+      <a href="/users/logout" class="btn btn-secondary logoutbtn btn-lg"> Log Out </a>
+    </div>
+  </div>
+
+  <div class="container-fluid-dashboard">
+    <% images.forEach(function(image) { %>
+    <div class="user display-block">
+      <p class="lead mb-3 myownheader">Welcome: "<%=image.fullname %>"</p>
+        <p class="lead mb-3">Image Description:  <%=image.desc%></p>
+          <p class="lead mb-3">Phone Number: <%=image.number %></p>
+    </div>
+<hr>
+    <div class="dashboard-body">
+
+
+    </div>
+
+
+    <% }) %>
+  </div>

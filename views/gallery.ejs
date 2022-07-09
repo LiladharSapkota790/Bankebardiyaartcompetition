@@ -6,25 +6,32 @@
 
   <div class="row ">
 
-    <% images.forEach(function(item) { %>
+    <% images.forEach(function(item)   { %>
 
     <div class="card col-lg-6">
-        <%  const imagetype = item.img.contentType; %>
-        <%  const imgdata = item.img.data.toString('base64'); %>
+      <%  const imagetype = item.img.contentType; %>
+      <%  const imgdata = item.img.data.toString('base64'); %>
 
       <a href="uploads/<%=item._id%>">
 
         <img src="data:image/<%=imagetype%>;base64,
-                       <%=imgdata%>" > Click to view photo
+                       <%=imgdata%>">
       </a>
 
-      <div class="card-body">
-        <h5 class="card-title"> <b> Image Title: </b> <%= item.name %></h5>
-        <p class="card-text"> <b> Image Description: </b><%= item.desc %></p>
+      <div class="card-body ">
+        <h5 class="Card-mainheading"> Image/Art information</h5>
+        <div class="card-header">
+          <p class="card-title"> <b> Title: </b> <%= item.name %></p>
+          <p class="card-text"> <b> Description: </b><%= item.desc %></p>
+        </div>
+        <div class="personal-info">
+          <h5 class="Card-mainheading"> Personal information </h5>
+
+        </div>
         <p class="card-text"> <b> Name: </b><%=item.fullname %> </p>
         <p class="card-text"> <b> Email: </b><%= item.email %> </p>
         <p class="card-text"> <b> Phone: </b><%=item.number%> </p>
-
+        <a href="uploads/<%=item._id%>" class="btn btn-sm btn-primary"> Click for more info </a>
       </div>
     </div>
 

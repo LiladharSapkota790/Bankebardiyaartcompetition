@@ -3,32 +3,49 @@
 
 
 <div class="image-container">
-
-
-  <h2> Uploaded by: <%=fullname%> </h2>
+  <h5 class="card-mainheading"> <span> Uploaded by: </span> <%=fullname%> </h5>
   <hr />
 
 
+  <div class="row">
 
-
-    <img class="single-img" src="data:image/<%=imagetype%>;base64, <%=imgdata %>" alt="imagenotfound">
-<div class="card">
-
-
-
-    <div class="card-body animate-card-text">
-      <h5 class="card-title"> <b> Image Title: </b><%=name %></h5>
-      <p class="card-text"> <b> Image Description: </b><%= desc %></p>
-      <p class="card-text"> <b> Name: </b><%=fullname %> </p>
-      <p class="card-text"> <b> Email: </b><%= email %> </p>
-      <p class="card-text"> <b> Phone: </b><%=number%> </p>
-
-      <p class="card-text"> <b> District: </b> <%= district%> </p>
-      <p class="card-text"> <b> Municipality name: </b> <%= municipalityname%> </p>
-      <p class="card-text"> <b> Ward number:  </b> <%=wardno%> </p>
-
+    <div class="col-lg-6">
+      <img class="single-img" src="data:image/<%=imagetype%>;base64, <%=imgdata %>" alt="imagenotfound">
     </div>
+
+
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body animate-card-text">
+          <h5 class="Card-mainheading"> Image/Art information</h5>
+
+          <div class="card-header">
+            <p class="card-text"> <b> Title: </b><%=name %></p>
+            <p class="card-text"> <b> Description: </b><%= desc %></p>
+          </div>
+
+          <div class="personal-info">
+            <h5 class="Card-mainheading"> Personal information </h5>
+          </div>
+
+          <p class="card-text"> <b> Name: </b><%=fullname %> </p>
+          <p class="card-text"> <b> Email: </b><%= email %> </p>
+          <p class="card-text"> <b> Phone: </b><%=number%> </p>
+
+          <p class="card-text"> <b> District: </b> <%= district%> </p>
+          <p class="card-text"> <b> Municipality name: </b> <%= municipalityname%> </p>
+          <p class="card-text"> <b> Ward number: </b> <%=wardno%> </p>
+        </div>
+      </div>
+    </div>
+
+
+
   </div>
+
+
+
+
 
 </div>
 
