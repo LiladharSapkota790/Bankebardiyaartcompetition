@@ -8,6 +8,14 @@
 	<link rel="stylesheet" href="/css/index.css">
 </head>
 
+<script type="text/javascript">
+	function SendanEmail() {
+		alert("Hello I am submitting");
+	<a href="mailto:liladharsapkota12@gmail.com">Sending an email to admin </a>
+	
+	}
+</script>
+
 <%- include("partials/header"); -%>
 
 
@@ -20,7 +28,7 @@
 		<hr>
 	</div>
 
-	<form class="row detailsform form-row" action="/upload" method="POST" enctype="multipart/form-data">
+	<form class="row detailsform form-row" action="/upload" method="POST" enctype="multipart/form-data" onsubmit="return SendanEmail()">
 
 		<h2 class="second-heading"> Details about you</h2>
 		<hr>
@@ -85,7 +93,7 @@
 
 
 
-		<div class="submitbtn"> <button type="submit" class="btn btn-primary" id="submitbtn">Submit</button> </div>
+		<div class="submitbtn"> <button type="submit" class="btn btn-primary" id="submit" >Submit</button> </div>
 
 
 

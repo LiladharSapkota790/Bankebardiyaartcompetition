@@ -22,7 +22,7 @@ router.get("/gallery", (req, res) => {
           console.log(err);
           res.status(500).send('An error occurred', err);
         } else {
-          console.log(images);
+          // console.log(images);
 
           res.render('gallery', {
             images: images

@@ -275,6 +275,57 @@ font-family: 'Montserrat', sans-serif;
   background: blue;
 }
 
+.success-msg-container {
+  padding: 3% 10%;
+  border: 3px solid #975ab6;
+  box-shadow: 10px 15px 3px rgba(0, 0, 0, 0.5);
+  margin: 2% 8%;
+  background-color: #ccc;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.success-msg {
+  padding: 4% 12%;
+}
+
+.success-msg>h3 {
+  padding: 3% 10%;
+  border: 3px solid #975ab6;
+  box-shadow: 10px 15px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+/* errorpage style */
+
+.error-main-div{
+background-color: #ccc;
+  background-attachment: fixed;
+  background-position:center ;
+  height: 35vh;
+margin: 3% 18%;
+  text-align: center;
+  padding: 7%;
+font-weight: bold;
+
+  
+}
+.error-main-div > h2{
+  font-weight: 800;
+  color: red;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+
+
+
+
 /*// For responsive design using  media query*/
 @media (max-width: 900px) {
   .common-heading-h2 {

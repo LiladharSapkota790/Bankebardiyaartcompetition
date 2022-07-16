@@ -60,7 +60,7 @@ router.post("/login", function(req, res) {
     } else {
       passport.authenticate("local")(req, res, function() {
         req.flash('success', 'Registration successfully, go ahead and login.')
-        res.render("uploadform");
+        res.redirect("/");
       });
     }
   });

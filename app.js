@@ -155,99 +155,22 @@ app.get('/upload', (req, res) => {
 
 
 
-/*authentication */
-
-// app.get("/login", function(req, res) {
-//   res.render("login");
-// })
-
-
-/*
-handling Login*/
-// app.post("/login", function(req, res) {
-//   const user = new User({
-//     username: req.body.username,
-//     password: req.body.password
-//   });
-
-//   req.login(user, function(err) {
-//     console.log(user);
-//     if (err) {
-//       console.log(err);
-//       res.redirect("/login");
-//     } else {
-//       passport.authenticate("local")(req, res, function() {
-//         /*  alert("you are logged in Successfully..");*/
-//         res.redirect("/gallery");
-//       })
-//     }
-//   })
-
-
-// })
-
-
-// app.get('/logout', function(req, res, next) {
-//   req.logout(function(err) {
-//     if (err) {
-//       return next(err);
-//     }
-//     alert("you are logged Out Successfully..");
-//     res.redirect('/');
-//   });
-// });
-
-
-
-// app.get("/register", function(req, res) {
-//   res.render("register");
-// })
-
-
-
-/*handling register */
-//  app.post("/register", function(req, res) {
-//    User.register({
-//       username: req.body.username,
-//         },
-//      req.body.password, function(err, user) {
-
-//       console.log("user.fullname" + " found");
-//       if (err) {
-//         console.log(err); res.redirect("/register");
-
-//        } else {
-
-//          passport.authenticate("local")(req, res, function() {
-//         res.send("Your account has beeen created successfully..");
-//      })
-//      }
-
-//    }
-//    )
-
-
-//  })
 
 
 
 
 
-
-
-
-
-// app.get("/", (req, res) => {
-//   res.render("index");
-// });
 
 
 app.post('/upload', upload.single('image'), (req, res, next) => {
 
-/*  const User = require('./model/usermodel');
-  app.use('/users', require('./routes/users.js'));
-  console.log(req.user);
-  console.log(req.user._id);*/
+  //  const User = require('./model/usermodel');
+  //   app.use('/users', require('./routes/users.js'));
+  //   console.log(req.user);
+  //   console.log(req.user._id);
+
+
+
   var newImage = {
     name: req.body.name,
     desc: req.body.desc,
@@ -271,13 +194,13 @@ app.post('/upload', upload.single('image'), (req, res, next) => {
     if (err) {
       console.log(err);
     } else {
-      res.render("thanks");
-      /*  User.findById(req.user._id, function(err, founduser) {
-      founduser.newImage = newImage;
-      founduser.save(function(){
-        res.render("thanks");
-      })
-        })*/
+      res.redirect("/thanks");
+      // /*  User.findById(req.user._id, function(err, founduser) {
+      // founduser.newImage = newImage;
+      // founduser.save(function(){
+      //   res.render("thanks");
+      // })
+      //   })*/
 
 
 
@@ -292,29 +215,13 @@ app.post('/upload', upload.single('image'), (req, res, next) => {
 
 
 
-// app.get("/gallery", (req, res) => {
-//   if (req.isAuthenticated()) {
-//     imgModel.find({}, (err, images) => {
-//       if (err) {
-//         console.log(err);
-//         res.status(500).send('An error occurred', err);
-//       } else {
-//         /*  console.log(images);*/
-
-//         res.render('gallery', {
-//           images: images
-//         });
-//       }
-//     });
-//   } else {
-//     res.redirect("/login");
-//   }
-// })
 
 
 
 
-
+app.get("/thanks", (req, res) => {
+  res.render("thanks");
+})
 
 
 
@@ -358,10 +265,36 @@ app.get("/uploads/:uploadId", (req, res) => {
 
 
 
+// To catcha an error and send a not found page
+
+app.get("*", (req, res) =>{
+  res.status(404).render('error');
+})
 
 
 
 
+// Sending alert message
+
+
+const sgMail = require('@sendgrid/mail')
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+const msg = {
+  to: 'sapkotaliladhar12417@gmail.com', // Change to your recipient
+  from: 'officialliladhar2314@gmail.com', // Change to your verified sender
+  subject: 'Sending with SendGrid is Fun',
+  text: 'and easy to do anywhere, even with Node.js'
+
+}
+
+sgMail
+  .send(msg)
+  .then(() => {
+    console.log('Email sent')
+  })
+  .catch((error) => {
+    console.error(error)
+  })
 
 
 // Step 9 - configure the server's port

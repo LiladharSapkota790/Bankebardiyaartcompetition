@@ -1,12 +1,23 @@
 {
   "name": "bankebardiyaartcompetition",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "dependencies": {
-    "connect-flash": "^0.1.1",
+    "@sendgrid/mail": "^7.7.0",
+    "body-parser": "^1.20.0",
     "config": "^3.3.1",
-    "json5": "^2.2.1"
+    "connect-flash": "^0.1.1",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "flash": "^1.1.0",
+    "json5": "^2.2.1",
+    "mongoose": "^6.4.4",
+    "mongoose-findorcreate": "^3.0.0",
+    "multer": "^1.4.5-lts.1",
+    "passport": "^0.6.0",
+    "passport-local-mongoose": "^7.1.2"
   },
   "devDependencies": {},
   "scripts": {
@@ -22,5 +33,6 @@
   "bugs": {
     "url": "https://github.com/LandEcreation/Bankebardiyaartcompetition/issues"
   },
-  "homepage": "https://github.com/LandEcreation/Bankebardiyaartcompetition#readme"
+  "homepage": "https://github.com/LandEcreation/Bankebardiyaartcompetition#readme",
+  "description": ""
 }
