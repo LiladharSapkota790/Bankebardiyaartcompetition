@@ -72,7 +72,7 @@ app.use(passport.session());
 
 const dburi = process.env.MONGO_URL;
 
-mongoose.connect(dburi, {
+mongoose.connect('dburi', {
     useNewUrlParser: true,
     useUnifiedTopology: true
   },
