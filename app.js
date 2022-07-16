@@ -70,9 +70,9 @@ app.use(passport.session());
 */
 /*connecting mongoatlas*/
 
-const dburi = process.env.MONGO_URL;
+/*const dburi = process.env.MONGO_URL;*/
 
-mongoose.connect('dburi', {
+mongoose.connect(`${process.env.MONGO_URL}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   },
@@ -152,7 +152,6 @@ app.get('/upload', (req, res) => {
       res.render("login");
     }*/
 });
-
 
 
 
@@ -267,7 +266,7 @@ app.get("/uploads/:uploadId", (req, res) => {
 
 // To catcha an error and send a not found page
 
-app.get("*", (req, res) =>{
+app.get("*", (req, res) => {
   res.status(404).render('error');
 })
 
